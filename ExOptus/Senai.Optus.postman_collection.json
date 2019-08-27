@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "348cbc34-9901-4cf3-8cf7-8e9004c9a569",
+		"name": "Senai.Optus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Estilo",
+			"item": [
+				{
+					"name": "Estilo.Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/estilo",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"estilo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estilo.Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/estilo/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"estilo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estilo.Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"idEstilo\": 15,\n        \"nome\": \"Fanque\",\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/estilo",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"estilo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estilo.BuscarPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/estilo/8",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"estilo",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Artista",
+			"item": [
+				{
+					"name": "Artista.Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/artista",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"artista"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Artista.Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/artista",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"artista"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuario",
+			"item": []
+		}
+	]
+}
