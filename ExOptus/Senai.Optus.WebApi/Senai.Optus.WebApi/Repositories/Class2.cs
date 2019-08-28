@@ -9,11 +9,16 @@ namespace Senai.Optus.WebApi.Repositories
 {
     public class UsuarioRepositorio
     {
+        // MÉTODO PARA BUSCA E AUTENTICAÇÃO DE USUÁRIOS
+        /// <summary>
+        /// Compara o usuário-objeto-instanciado com o banco de dados SQL, retornando a (não) autenticação do mesmo.
+        /// </summary>
+        /// <param name="login"></param>
+        /// <returns>Usuário (não) autenticado</returns>
         public Usuarios BuscarPorEmailESenha(LoginViewModel login)
         {
             using (OptusContext ctx = new OptusContext())
             {
-                // buscar os dados no banco e verificar se este email e senha sao validos
                 Usuarios usuarioBuscado = ctx.Usuarios.FirstOrDefault(x => x.Email == login.Email && x.Senha == login.Senha);
                 if (usuarioBuscado == null)
                 {

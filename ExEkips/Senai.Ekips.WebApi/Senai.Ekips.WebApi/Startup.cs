@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Senai.Optus.WebApi
+namespace Senai.Ekips.WebApi
 {
     public class Startup
     {
@@ -23,7 +23,7 @@ namespace Senai.Optus.WebApi
                 })
                 .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
 
-                 services.AddAuthentication(options =>
+            services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = "JwtBearer";
                 options.DefaultChallengeScheme = "JwtBearer";
@@ -37,19 +37,19 @@ namespace Senai.Optus.WebApi
 
                     ValidateLifetime = true,
 
-                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("optus-chave-autenticacao")),
+                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("ekips-autenticacao")),
 
                     ClockSkew = TimeSpan.FromMinutes(30),
 
-                    ValidIssuer = "Optus.WebApi",
+                    ValidIssuer = "Ekips.WebApi",
 
-                    ValidAudience = "Optus.WebApi"
+                    ValidAudience = "Ekips.WebApi"
                 };
             });
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info { Title = "Optus API", Version = "v1" });
+                c.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info { Title = "Ekips API", Version = "v1" });
             });
 
         }
@@ -67,7 +67,7 @@ namespace Senai.Optus.WebApi
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "OPTUS API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Ekips API V1");
             });
             app.UseMvc();
         }
