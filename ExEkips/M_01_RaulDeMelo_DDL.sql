@@ -13,13 +13,13 @@ create table Permissao(
 create table Cargo(
 	IdCargo int primary key identity
 	,Nome varchar (255) not null
+	,Ativo bit default(0)
 )
 
 -- TABELA DE DEPARTAMENTOS
 create table Departamento(
 	IdDepartamento int primary key identity
 	,Nome varchar (255) not null
-	,Ativo bit default(0)
 )
 
 -- TABELA DE FUNCIONÁRIOS

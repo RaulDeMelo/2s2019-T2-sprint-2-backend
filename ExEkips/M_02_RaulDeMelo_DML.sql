@@ -4,10 +4,10 @@ use M_Ekips
 insert into Permissao (Nome) values ('COMUM'), ('ADMINISTRADOR');
 
 -- INSERÇÃO DE DADOS - {CARGOS}
-insert into Cargo (Nome) values ('Advogado trabalhista'), ('Product Owner');
+insert into Cargo (Nome, Ativo) values ('Advogado trabalhista', 0), ('Product Owner', 1);
 
 -- INSERÇÃO DE DADOS - {DEPARTAMENTOS}
-insert into Departamento (Nome, Ativo) values ('Departamento de Tecnologia', 1), ('Departamento Jurídico', 0);
+insert into Departamento (Nome) values ('Departamento de Tecnologia'), ('Departamento Jurídico');
 
 -- INSERÇÃO DE DADOS - {FUNCIONÁRIOS}
 insert into Funcionario (Nome, Email, Senha, CPF, Salario, IdCargo, IdDepartamento, IdPermissao) values 

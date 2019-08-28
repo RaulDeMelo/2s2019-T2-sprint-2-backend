@@ -33,7 +33,7 @@ namespace Senai.Ekips.WebApi.Repositories
         }
 
         /// <summary>
-        /// Insere um cargo a partir do escopo 'CargoDomain' - (Nome)
+        /// Insere um cargo a partir do escopo 'CargoDomain' - (Nome, Ativo)
         /// </summary>
         /// <param name="cargo"></param>
         public void Cadastrar(Cargo cargo)
