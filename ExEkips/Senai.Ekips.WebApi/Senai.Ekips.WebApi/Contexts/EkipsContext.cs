@@ -35,6 +35,8 @@ namespace Senai.Ekips.WebApi.Domains
             {
                 entity.HasKey(e => e.IdCargo);
 
+                entity.Property(e => e.Ativo).HasDefaultValueSql("((0))");
+
                 entity.Property(e => e.Nome)
                     .IsRequired()
                     .HasMaxLength(255)
@@ -44,8 +46,6 @@ namespace Senai.Ekips.WebApi.Domains
             modelBuilder.Entity<Departamento>(entity =>
             {
                 entity.HasKey(e => e.IdDepartamento);
-
-                entity.Property(e => e.Ativo).HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.Nome)
                     .IsRequired()

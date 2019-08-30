@@ -1,4 +1,5 @@
-﻿using Senai.Ekips.WebApi.Domains;
+﻿using Microsoft.EntityFrameworkCore;
+using Senai.Ekips.WebApi.Domains;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -71,6 +72,18 @@ namespace Senai.Ekips.WebApi.Repositories
                 cargoPesquisado.Nome = cargo.Nome;
                 ctx.Cargo.Update(cargoPesquisado);
                 ctx.SaveChanges();
+            }
+        }
+
+        /// <summary>
+        /// Faz a inspeção de cargos ativos por identificador numérico - via SQL-QUERY [FromSql]
+        /// </summary>
+        /// <returns>Lista de cargos ativos</returns>
+        public List<Cargo> ListarAtivos()
+        {
+            using (EkipsContext ctx = new EkipsContext())
+            {
+                return ctx.Cargo.FromSql("select * from Cargo where Ativo = 1").ToList();
             }
         }
     }
