@@ -1,0 +1,6 @@
+C:\Users\50503166855\Desktop\2s2019-T2-sprint-2-backend\ExOpflix\Senai.Opflix.WebAPII\Senai.Opflix.WebAPII\obj\Debug\netcoreapp2.1\Senai.Opflix.WebApi.csprojAssemblyReference.cache
+C:\Users\50503166855\Desktop\2s2019-T2-sprint-2-backend\ExOpflix\Senai.Opflix.WebAPII\Senai.Opflix.WebAPII\obj\Debug\netcoreapp2.1\Senai.Opflix.WebApi.csproj.CoreCompileInputs.cache
+C:\Users\50503166855\Desktop\2s2019-T2-sprint-2-backend\ExOpflix\Senai.Opflix.WebAPII\Senai.Opflix.WebAPII\obj\Debug\netcoreapp2.1\Senai.Opflix.WebApi.RazorAssemblyInfo.cache
+C:\Users\50503166855\Desktop\2s2019-T2-sprint-2-backend\ExOpflix\Senai.Opflix.WebAPII\Senai.Opflix.WebAPII\obj\Debug\netcoreapp2.1\Senai.Opflix.WebApi.RazorAssemblyInfo.cs
+C:\Users\50503166855\Desktop\2s2019-T2-sprint-2-backend\ExOpflix\Senai.Opflix.WebAPII\Senai.Opflix.WebAPII\obj\Debug\netcoreapp2.1\Senai.Opflix.WebApi.AssemblyInfoInputs.cache
+C:\Users\50503166855\Desktop\2s2019-T2-sprint-2-backend\ExOpflix\Senai.Opflix.WebAPII\Senai.Opflix.WebAPII\obj\Debug\netcoreapp2.1\Senai.Opflix.WebApi.AssemblyInfo.cs

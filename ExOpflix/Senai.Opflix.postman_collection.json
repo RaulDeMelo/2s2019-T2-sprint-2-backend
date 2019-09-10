@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "2252677e-9dfc-4586-b374-02a0a7be68d5",
+		"name": "Senai.Opflix",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Lancamento",
+			"item": [
+				{
+					"name": "Lancamento.Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lancamento.Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Alimentors\",\n\t\"idCategoria\": 4,\n\t\"idTipoMetragem\": 2,\n\t\"tempDuracao\": \"50:11:56\",\n\t\"dataLancamento\": \"2003-07-10T00:00:00\",\n\t\"sinopse\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget molestie sapien. Suspendisse potenti. Maecenas risus augue, interdum porttitor. Integer fringilla vehicula convallis. Etiam vitae lacus suscipit lacus ultricies elementum ut vel nisi.\"\n}\n"
+						},
+						"url": {
+							"raw": "localhost:5000/api/lancamento",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"lancamento"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Usuario.Autenticar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"helena@gmail.com\",\n\t\"senha\": \"4554\"\n}\n"
+						},
+						"url": {
+							"raw": "localhost:5000/api/usuario",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
