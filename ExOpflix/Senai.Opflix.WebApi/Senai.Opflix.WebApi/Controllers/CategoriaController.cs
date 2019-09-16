@@ -1,9 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Senai.Opflix.WebApi.Domains;
+using Senai.Opflix.WebApi.Repositories;
 
 namespace Senai.Opflix.WebApi.Controllers
 {
