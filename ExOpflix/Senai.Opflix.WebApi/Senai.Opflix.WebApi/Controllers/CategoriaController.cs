@@ -12,5 +12,25 @@ namespace Senai.Opflix.WebApi.Controllers
     [ApiController]
     public class CategoriaController : ControllerBase
     {
+        //
+        CategoriaRepositorio categoriaRepositorio = new CategoriaRepositorio();
+        
+        [Authorize(Roles = "2")]
+        [HttpPost]
+        public IActionResult Cadastrar(Categoria categoria)
+        {
+            try
+            {
+                categoriaRepositorio.Cadastrar(categoria);
+                return Ok(categoriaRepositorio.Listar());
+            }
+            catch (Exception exe)
+            {
+                return BadRequest(new
+                {
+                    mensagem = "Não fora possível inserir o objeto de categoria desejado; depure as possíveis falhas de inscrição. " + exe.Message
+                });
+            }
+        }
     }
 }
