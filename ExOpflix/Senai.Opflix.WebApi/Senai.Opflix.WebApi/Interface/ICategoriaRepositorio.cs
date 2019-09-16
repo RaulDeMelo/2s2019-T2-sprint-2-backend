@@ -8,5 +8,5 @@ namespace Senai.Opflix.WebApi.Interface
 {
     interface ILancamentoRepositorio
     {
-      void Cadastrar();
+      void Cadastrar(Categoria categoria);
     }
