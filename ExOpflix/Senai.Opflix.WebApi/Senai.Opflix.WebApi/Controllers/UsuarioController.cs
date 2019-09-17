@@ -4,6 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -21,11 +22,13 @@ namespace Senai.Opflix.WebApi.Controllers
         // INSTANCIANDO OBJETO DE REPOSITÓRIO
         UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
 
+        /// REQUISIÇÃO PARA MÉTODO DE AUTENTICAÇÃO DE USUÁRIOS
         /// <summary>
         /// Método para captura de dados de usuário insertos no banco de dados e a (não) autenticação do mesmo - inerente ao escopo de permissão admitido pelo identificador numérico.
         /// </summary>
         /// <param name="autenticador"></param>
         /// <returns>Bearer Token inerente ao escopo de autenticação-permissão admitido pelo identificador numérico de tipo de usuário.</returns>
+        [Route("authorize")]
         [HttpPost]
         public IActionResult Autenticar(Autenticador autenticador)
         {
@@ -62,6 +65,50 @@ namespace Senai.Opflix.WebApi.Controllers
                 return BadRequest(new
                 {
                     Mensagem = "A autenticação não fora efetivada com sucesso; depure a existência de um mesmo item para a consignação inequívoca. " + ex.Message
+                });
+            }
+        }
+
+        ///
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Authorize(Roles = "2")]
+        [Route("adminCad")]
+        public IActionResult CadastrarAdmin(Usuario usuario)
+        {
+            usuarioRepositorio.Cadastrar(usuario);
+            return Ok(new
+            {
+                mensagem = "O respectivo usuário fora inserto com sucesso. "
+            });
+        }
+
+        ///
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Authorize]
+        [Route("Cad")]
+        public IActionResult Cadastrar(Usuario usuario)
+        {
+            if (usuario.IdTipoUsuario == 2)
+            {
+                return BadRequest(new {
+                    mensagem = "O nível de segurança exigido para a inscrição de um usuário administrador não é passível para o nível de autorização concedida."
+                });
+            }
+            else {
+                usuarioRepositorio.Cadastrar(usuario);
+                return Ok(new
+                {
+                    mensagem = "O respectivo usuário fora inserto com sucesso. "
                 });
             }
         }

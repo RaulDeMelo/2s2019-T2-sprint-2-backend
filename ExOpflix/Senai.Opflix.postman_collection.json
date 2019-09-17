@@ -6,8 +6,217 @@
 	},
 	"item": [
 		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Usuario.Autenticar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"erik@email.com\",\n\t\"senha\": \"123456\"\n}\n"
+						},
+						"url": {
+							"raw": "localhost:5000/api/usuario/authorize",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"usuario",
+								"authorize"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuario.CadastrarAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyaWtAZW1haWwuY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjIiLCJleHAiOjE1Njg3MjYzMjMsImlzcyI6Ik9wZmxpeC5XZWJBcGkiLCJhdWQiOiJPcGZsaXguV2ViQXBpIn0.rkWaxYxJjNYTDw_M0tqUb_A3UPivysW8Z1I04kSPIg0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"rar123daska\",\n\t\"email\": \"heaaasdad@gmail.com\",\n\t\"senha\": \"45564\",\n\t\"idTipoUsuario\": 2\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/usuario/adminCad",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"usuario",
+								"adminCad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuario.Listar",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:5000/api/usuario/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"usuario",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuario.CadastrarComum",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvYkBnbWFpbC5jb20iLCJqdGkiOiI0IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsImV4cCI6MTU2ODcyNjA1NSwiaXNzIjoiT3BmbGl4LldlYkFwaSIsImF1ZCI6Ik9wZmxpeC5XZWJBcGkifQ._kCPre-k-q9e69yyRlplZbLH0Sj6HrVucrY6rd4-8p4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"rardaska\",\n\t\"email\": \"heaa@gmail.com\",\n\t\"senha\": \"45\",\n\t\"idTipoUsuario\": 2\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/usuario/cad",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"usuario",
+								"cad"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Lancamento",
 			"item": [
+				{
+					"name": "LancamentoFavoritado",
+					"item": [
+						{
+							"name": "LancamentoFavoritado.Listar",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/api/lancamento/favoritos",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"lancamento",
+										"favoritos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LancamentoFavoritado.Cadastrar",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:5000/api/lancamento/addfavor",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"lancamento",
+										"addfavor"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
 				{
 					"name": "Lancamento.Listar",
 					"request": {
@@ -36,14 +245,36 @@
 							"raw": "{\n\t\"nome\": \"Alimentors\",\n\t\"idCategoria\": 4,\n\t\"idTipoMetragem\": 2,\n\t\"tempDuracao\": \"50:11:56\",\n\t\"dataLancamento\": \"2003-07-10T00:00:00\",\n\t\"sinopse\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget molestie sapien. Suspendisse potenti. Maecenas risus augue, interdum porttitor. Integer fringilla vehicula convallis. Etiam vitae lacus suscipit lacus ultricies elementum ut vel nisi.\"\n}\n"
 						},
 						"url": {
-							"raw": "localhost:5000/api/lancamento",
+							"raw": "localhost:5000/api/lancamento/adminCad",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
 								"api",
-								"lancamento"
+								"lancamento",
+								"adminCad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lancamento.Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/lancamento/delecao/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"lancamento",
+								"delecao",
+								"1"
 							]
 						}
 					},
@@ -52,39 +283,12 @@
 			]
 		},
 		{
-			"name": "Usuario",
-			"item": [
-				{
-					"name": "Usuario.Autenticar",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"email\": \"helena@gmail.com\",\n\t\"senha\": \"4554\"\n}\n"
-						},
-						"url": {
-							"raw": "localhost:5000/api/usuario",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"api",
-								"usuario"
-							]
-						}
-					},
-					"response": []
-				}
-			]
+			"name": "Categoria",
+			"item": []
+		},
+		{
+			"name": "Plataforma",
+			"item": []
 		}
 	]
 }

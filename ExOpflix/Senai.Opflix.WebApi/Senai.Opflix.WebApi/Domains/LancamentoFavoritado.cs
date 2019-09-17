@@ -8,9 +8,9 @@ namespace Senai.Opflix.WebApi.Domains
     public class LancamentoFavoritado
     {
         public int? IdUsuario { get; set; }
-        public int? IdLancamento { get; set; }
+        public Usuario Usuario { get; set; }
 
-        public Usuario IdUsuarioNavigation { get; set; }
-        public Lancamento IdLancamentoNavigation { get; set; }
+        public int? IdLancamento { get; set; }
+        public Lancamento Lancamento { get; set; }
     }
 }

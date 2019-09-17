@@ -10,7 +10,7 @@ namespace Senai.Opflix.WebApi.Repositories
 {
     public class UsuarioRepositorio : IUsuarioRepositorio
     {
-        // MÉTODO PARA BUSCA E AUTENTICAÇÃO DE USUÁRIOS
+        /// MÉTODO PARA BUSCA E AUTENTICAÇÃO DE USUÁRIOS
         /// <summary>
         /// Compara o usuário-objeto-instanciado com o banco de dados SQL, retornando a (não) autenticação do mesmo.
         /// </summary>
@@ -26,6 +26,20 @@ namespace Senai.Opflix.WebApi.Repositories
                     return null;
                 }
                 return usuarioInspecionado;
+            }
+        }
+
+        /// MÉTODO PARA CADASTRO DE USUÁRIO
+        /// <summary>
+        /// Captura o item-usuário e opera a inserção do dado dentro do banco de dados [As respectivas autorizações são validadas no espectro do Controller respectivo].
+        /// </summary>
+        /// <param name="usuario"></param>
+        public void Cadastrar(Usuario usuario)
+        {
+            using(OpflixContext ctx = new OpflixContext())
+            {
+                ctx.Usuario.Add(usuario);
+                ctx.SaveChanges();
             }
         }
     }

@@ -10,7 +10,7 @@ namespace Senai.Opflix.WebApi.Repositories
 {
     public class LancamentoRepositorio : ILancamentoRepositorio
     {
-        // MÉTODO PARA LISTAGEM DE ITENS DE LANÇAMENTO
+        /// MÉTODO PARA LISTAGEM DE ITENS DE LANÇAMENTO
         /// <summary>
         /// Evoca, a partir do Framework, a tabela de Lancamento do banco de dados do SQL
         /// </summary>
@@ -51,6 +51,7 @@ namespace Senai.Opflix.WebApi.Repositories
             }
         }
 
+        /// MÉTODO PARA INSPEÇÃO DE IDENTIFICADOR NUMÉRICO E ATUALIZAÇÃO DE ITEM-LANÇAMENTO ESTRITO
         /// <summary>
         /// Inpeciona por identificador numérico e atualiza, a partir da comparação-insertiva de dados, o lançamento estrito. 
         /// </summary>
@@ -63,10 +64,22 @@ namespace Senai.Opflix.WebApi.Repositories
                 LancamentoInspecionado.Nome = lancamento.Nome;
                 ctx.Lancamento.Update(LancamentoInspecionado);
                 ctx.SaveChanges();
-
             }
         }
 
-
+        /// MÉTODO PARA INSPEÇÃO POR IDENTIFICADOR NUMÉRICO E DELEÇÃO DE ITEM-LANÇAMENTO ESTRITO
+        /// <summary>
+        /// Inspeciona por identificador numérico e captura, porventura exista, o item-lançamento estrito: doravante deletando-o.
+        /// </summary>
+        /// <param name="id"></param>
+        public void Deletar(int id)
+        {
+            using(OpflixContext ctx = new OpflixContext())
+            {
+                Lancamento lancamento = ctx.Lancamento.Find(id);
+                ctx.Lancamento.Remove(lancamento);
+                ctx.SaveChanges();
+            }
+        }
     }
 }

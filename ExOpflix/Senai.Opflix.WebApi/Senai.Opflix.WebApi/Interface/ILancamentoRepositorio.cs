@@ -12,5 +12,6 @@ namespace Senai.Opflix.WebApi.Interface
         void Cadastrar(Lancamento lancamento);
         Lancamento BuscarPorId(int id);
         void Atualizar(Lancamento lancamento);
+        void Deletar(int id);
     }
 }

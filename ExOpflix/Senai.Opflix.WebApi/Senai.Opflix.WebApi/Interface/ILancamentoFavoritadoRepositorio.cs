@@ -1,5 +1,4 @@
 ﻿using Senai.Opflix.WebApi.Domains;
-using Senai.Opflix.WebApi.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Senai.Opflix.WebApi.Interface
 {
-    interface IUsuarioRepositorio
+    interface ILancamentoFavoritadoRepositorio
     {
-        Usuario AutenticarPorBusca(Autenticador login);
-        void Cadastrar(Usuario usuario);
+        List<LancamentoFavoritado> Listar();
+        void Cadastrar(LancamentoFavoritado lancamentoFavoritado);
     }
 }

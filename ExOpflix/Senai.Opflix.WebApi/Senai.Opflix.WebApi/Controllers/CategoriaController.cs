@@ -15,9 +15,14 @@ namespace Senai.Opflix.WebApi.Controllers
     [ApiController]
     public class CategoriaController : ControllerBase
     {
-        //
+        // INSTANCIANDO OBJETO DE REPOSITÓRIO
         CategoriaRepositorio categoriaRepositorio = new CategoriaRepositorio();
-        
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="categoria"></param>
+        /// <returns>Saída de resposta para confirmação da efetividade[lista de categorias]/bloqueio do código</returns>
         [Authorize(Roles = "2")]
         [HttpPost]
         public IActionResult Cadastrar(Categoria categoria)
@@ -35,5 +40,59 @@ namespace Senai.Opflix.WebApi.Controllers
                 });
             }
         }
+
+        ///
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>Lista de categorias</returns>
+        [Authorize]
+        [HttpGet]
+        public IActionResult Listar()
+        {
+            try{ 
+            return Ok(categoriaRepositorio.Listar());
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(new {
+                    mensagem = "Não fora possível efetuar a listagem dos itens correspondentes. " + ex.Message
+                });
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="categoria"></param>
+        /// <returns>Saída de resposta para confirmação da efetividade/bloqueio do código</returns>
+        [Authorize(Roles = "2")]
+        [HttpPut("{id}")]
+        public IActionResult Atualizar(Categoria categoria){
+            try
+            {
+                Categoria categoriaInspecionada = categoriaRepositorio.BuscarPorId(categoria.IdCategoria);
+                if (categoriaInspecionada == null)
+                    return NotFound(new
+                    {
+                        mensagem = "Sua categoria não foi inpecionada com sucesso em nosso sistema; verifique a existência do identificador numérico inserto"
+                    });
+
+                categoriaRepositorio.Atualizar(categoria);
+
+                return Ok(new
+                {
+                    messagem = "Sua categoria foi inspecionada e atualizada com sucesso."
+                });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new
+                {
+                    mensagem = "Um erro inesperado ao atualizar foi identificado; certifique-se se os parâmetros são correspondidos inerentemente aos valores insertos" + ex.Message
+                });
+            }
+        }
+        
     }
 }

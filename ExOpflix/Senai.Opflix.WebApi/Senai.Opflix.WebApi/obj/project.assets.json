@@ -11552,11 +11552,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\50503166855\\Desktop\\ExOpflix\\Senai.Opflix.WebApi\\Senai.Opflix.WebApi\\Senai.Opflix.WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\50503166855\\Desktop\\OPFLIX\\Senai.Opflix.WebApi\\Senai.Opflix.WebApi\\Senai.Opflix.WebApi.csproj",
       "projectName": "Senai.Opflix.WebApi",
-      "projectPath": "C:\\Users\\50503166855\\Desktop\\ExOpflix\\Senai.Opflix.WebApi\\Senai.Opflix.WebApi\\Senai.Opflix.WebApi.csproj",
+      "projectPath": "C:\\Users\\50503166855\\Desktop\\OPFLIX\\Senai.Opflix.WebApi\\Senai.Opflix.WebApi\\Senai.Opflix.WebApi.csproj",
       "packagesPath": "C:\\Users\\50503166855\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\50503166855\\Desktop\\ExOpflix\\Senai.Opflix.WebApi\\Senai.Opflix.WebApi\\obj\\",
+      "outputPath": "C:\\Users\\50503166855\\Desktop\\OPFLIX\\Senai.Opflix.WebApi\\Senai.Opflix.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
